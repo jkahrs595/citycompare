@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import City from './components/City';
+import React, {Component} from "react";
+import City from "./components/City";
 
 class App extends Component {
     render() {

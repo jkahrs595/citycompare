@@ -1,6 +1,6 @@
-import React from 'react';
-import axios from 'axios';
-import {Table} from 'react-bootstrap';
+import React from "react";
+import axios from "axios";
+import {Table} from "react-bootstrap";
 
 class Population extends React.Component {
     constructor(props) {
@@ -10,17 +10,20 @@ class Population extends React.Component {
             density: '',
             growth: ''
         };
+        this.onLoad = this.onLoad.bind(this);
+        this.onLoad();
     }
-    componentDidMount(){
-        axios.get('https://api.wolframalpha.com/v2/query?input='+ this.props.cityName + '&format=plaintext&output=JSON&appidE7AE9X-24H3XT7EQQ')
-            .then(response => {
-                console.dir(response);
-                this.setState = {
-                    population: response
+    onLoad() {
+        if (this.props.cityName) {
+            axios.get('https://api.wolframalpha.com/v2/query?input=' + this.props.cityName + '&format=html&output=JSON&appid=E7AE9X-24H3XT7EQQ')
+                .then(response => {
+                    console.dir(response);
+                    this.setState({
+                        population: response.data.queryresult.pods[1].subpods[0].plaintext
 
-                }
-            });
-
+                    });
+                });
+        }
     }
     render() {
         return (

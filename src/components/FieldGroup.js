@@ -1,7 +1,7 @@
-import React from 'react';
-import {FormGroup, FormControl, ControlLabel, HelpBlock} from 'react-bootstrap';
+import React from "react";
+import {FormGroup, FormControl, ControlLabel, HelpBlock} from "react-bootstrap";
 
-function FieldGroup({ id, label, help, ...props }) {
+function FieldGroup({id, label, help, ...props}) {
     return (
         <FormGroup controlId={id}>
             <ControlLabel>{label}</ControlLabel>

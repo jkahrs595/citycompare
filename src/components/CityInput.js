@@ -1,10 +1,9 @@
-import React from 'react';
-import {Col, Button, Image} from 'react-bootstrap';
-import Population from './Population';
-import ImagesClient from 'google-images';
+import React from "react";
+import {Col, Button, Image} from "react-bootstrap";
+import ImagesClient from "google-images";
 
 class CityInput extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             cityName: props.cityName || ''
@@ -12,11 +11,13 @@ class CityInput extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    handleChange(e){
+
+    handleChange(e) {
         this.setState({
             [e.target.name]: e.target.value
         });
     }
+
     handleSubmit(e) {
         e.preventDefault();
         let client = new ImagesClient('016134850918559424907:vqltefdxira', 'AIzaSyB6UlCWniwPlDaLQMLi_4gc4PV6iLskvDI');
@@ -26,7 +27,8 @@ class CityInput extends React.Component {
             });
         });
     }
-    render(){
+
+    render() {
         const {cityName} = this.state;
         return (
             <form onSubmit={this.handleSubmit}>
@@ -38,7 +40,6 @@ class CityInput extends React.Component {
                     <Button onClick={this.handleSubmit}>Get City Info</Button>
                 </Col>
                 <Image responsive rounded src={this.state.imgUrl}/>
-                <Population cityName={this.props.cityName}/>
             </form>
 
         )
