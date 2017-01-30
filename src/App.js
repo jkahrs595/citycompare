@@ -5,8 +5,6 @@ class App extends Component {
     render() {
         return (
             <div>
-                <City cityName="Seattle"/>
-                <City cityName="Detroit"/>
                 <City/>
             </div>
         );
