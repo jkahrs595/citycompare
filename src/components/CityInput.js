@@ -1,5 +1,5 @@
 import React from "react";
-import {Col, ControlLabel, Button} from "react-bootstrap";
+import {Col, Button} from "react-bootstrap";
 import CityData from './CityData';
 import {getCity} from '../utils/Api';
 
@@ -34,18 +34,25 @@ class CityInput extends React.Component {
         }
     }
 
+
     render() {
         const {cityName, stateName, data} = this.state;
         return (
             <form onSubmit={this.handleSubmit}>
-                <Col xs={4} lg={12} lgOffset={2}>
-                    <ControlLabel>City:</ControlLabel>
+                <Col xs={12}>
+                    <label>City:</label>
                     <input name="cityName" type="text" value={cityName} onChange={this.handleChange}/>
-                    <ControlLabel>State:</ControlLabel>
-                    <input name="stateName" type="text" value={stateName} onChange={this.handleChange}/>
-                    <Button onClick={this.handleSubmit}>Get City Info</Button>
-                    <CityData data={data}/>
                 </Col>
+                <Col xs={12}>
+                    <label>State:</label>
+                    <input name="stateName" type="text" value={stateName} onChange={this.handleChange}/>
+                </Col>
+                <Col xs={12}>
+                    <Button onClick={this.handleSubmit}>Get City Info</Button>
+                </Col>
+
+                <CityData data={data}/>
+
             </form>
 
         )

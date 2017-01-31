@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "axios": "^0.15.3",
+    "lodash": "^4.17.4",
     "react-bootstrap": "^0.30.7",
     "react-forms": "^2.0.0-beta35",
     "react-scripts": "0.8.5"
@@ -12,7 +13,8 @@
     "dark-sky": "^1.0.10",
     "google-images": "^2.0.0",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-google-maps": "^6.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
