@@ -1,21 +1,9 @@
 import React from 'react';
-import {withGoogleMap, GoogleMap} from 'react-google-maps';
-
-const GettingStartedGoogleMap = withGoogleMap(props => (
-    <GoogleMap
-        ref={props.onMapLoad}
-        defaultZoom={3}
-        defaultCenter={{ lat: -25.363882, lng: 131.044922 }}
-        onClick={props.onMapClick}
-    >
-    </GoogleMap>
-));
 
 const containerElement = <div style={{ height: `100%` }} />;
 const mapElement = <div style={{ height: `100%` }} />;
 
 const CityData = (props) => {
-
     const makeGMapsLink = (props) => {
         return "https://www.google.com/maps/embed/v1/view?key="
             +"APIKEY"
